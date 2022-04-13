@@ -42,7 +42,7 @@ typedef enum {
 #define APPVERSION_LINE1                   "Version:"
 #define APPVERSION_LINE2                   ("v" APPVERSION)
 
-#define COIN_DEFAULT_CHAINID                "test-core-1"
+#define COIN_DEFAULT_CHAINID                "core-1"
 
 // In non-expert mode, the app will convert from uxprt to XPRT
 #define COIN_DEFAULT_DENOM_BASE             "uxprt"
