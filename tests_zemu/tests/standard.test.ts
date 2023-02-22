@@ -74,7 +74,7 @@ describe('Standard', function () {
       const app = new CosmosApp(sim.getTransport())
 
       // Derivation path. First 3 items are automatically hardened!
-      const path = [44, 118, 5, 0, 3]
+      const path = [44, 750, 5, 0, 3]
       const resp = await app.getAddressAndPubKey(path, 'cosmos')
 
       console.log(resp)
@@ -85,7 +85,7 @@ describe('Standard', function () {
       expect(resp).toHaveProperty('bech32_address')
       expect(resp).toHaveProperty('compressed_pk')
 
-      expect(resp.bech32_address).toEqual('cosmos1wkd9tfm5pqvhhaxq77wv9tvjcsazuaykwsld65')
+      expect(resp.bech32_address).toEqual('cosmos1ltwhdpa6jhrrw2v2qzf9rvhqrgct38a2tnxl6x')
       expect(resp.compressed_pk.length).toEqual(33)
     } finally {
       await sim.close()
@@ -99,7 +99,7 @@ describe('Standard', function () {
       const app = new CosmosApp(sim.getTransport())
 
       // Derivation path. First 3 items are automatically hardened!
-      const path = [44, 118, 5, 0, 3]
+      const path = [44, 750, 5, 0, 3]
       const respRequest = app.showAddressAndPubKey(path, 'cosmos')
       // Wait until we are not in the main menu
       await sim.waitUntilScreenIsNot(sim.getMainMenuSnapshot())
@@ -114,7 +114,7 @@ describe('Standard', function () {
       expect(resp).toHaveProperty('bech32_address')
       expect(resp).toHaveProperty('compressed_pk')
 
-      expect(resp.bech32_address).toEqual('cosmos1wkd9tfm5pqvhhaxq77wv9tvjcsazuaykwsld65')
+      expect(resp.bech32_address).toEqual('cosmos1ltwhdpa6jhrrw2v2qzf9rvhqrgct38a2tnxl6x')
       expect(resp.compressed_pk.length).toEqual(33)
     } finally {
       await sim.close()
@@ -128,7 +128,7 @@ describe('Standard', function () {
       const app = new CosmosApp(sim.getTransport())
 
       // Derivation path. First 3 items are automatically hardened!
-      const path = [44, 118, 2147483647, 0, 4294967295]
+      const path = [44, 750, 2147483647, 0, 4294967295]
       const resp = await app.showAddressAndPubKey(path, 'cosmos')
       console.log(resp)
 
@@ -151,7 +151,7 @@ describe('Standard', function () {
       await sim.clickLeft()
 
       // Derivation path. First 3 items are automatically hardened!
-      const path = [44, 118, 2147483647, 0, 4294967295]
+      const path = [44, 750, 2147483647, 0, 4294967295]
       const respRequest = app.showAddressAndPubKey(path, 'cosmos')
 
       // Wait until we are not in the main menu
@@ -167,7 +167,7 @@ describe('Standard', function () {
       expect(resp).toHaveProperty('bech32_address')
       expect(resp).toHaveProperty('compressed_pk')
 
-      expect(resp.bech32_address).toEqual('cosmos1ex7gkwwmq4vcgdwcalaq3t20pgwr37u6ntkqzh')
+      expect(resp.bech32_address).toEqual('cosmos1j3jqvz6qdqd76y4phfc5nxs59a24tve2k9uwd2')
       expect(resp.compressed_pk.length).toEqual(33)
     } finally {
       await sim.close()
