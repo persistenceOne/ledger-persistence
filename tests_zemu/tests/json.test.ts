@@ -43,7 +43,7 @@ describe('Json', function () {
       await sim.start({ ...DEFAULT_OPTIONS, model: m.name })
       const app = new CosmosApp(sim.getTransport())
 
-      const path = [44, 118, 0, 0, 0]
+      const path = [44, 750, 0, 0, 0]
       const tx = Buffer.from(JSON.stringify(example_tx_str_basic))
 
       // get address / publickey
@@ -88,7 +88,7 @@ describe('Json', function () {
       await sim.start({ ...DEFAULT_OPTIONS, model: m.name })
       const app = new CosmosApp(sim.getTransport())
 
-      const path = [44, 118, 0, 0, 0]
+      const path = [44, 750, 0, 0, 0]
       const tx = Buffer.from(JSON.stringify(example_tx_str_basic2))
 
       // get address / publickey
@@ -132,7 +132,7 @@ describe('Json', function () {
       await sim.start({ ...DEFAULT_OPTIONS, model: m.name })
       const app = new CosmosApp(sim.getTransport())
 
-      const path = [44, 118, 0, 0, 0]
+      const path = [44, 750, 0, 0, 0]
       const tx = Buffer.from(JSON.stringify(example_tx_str_basic))
 
       // get address / publickey
@@ -177,7 +177,7 @@ describe('Json', function () {
       await sim.start({ ...DEFAULT_OPTIONS, model: m.name })
       const app = new CosmosApp(sim.getTransport())
 
-      const path = [44, 118, 0, 0, 0]
+      const path = [44, 750, 0, 0, 0]
       const tx = Buffer.from(JSON.stringify(ibc_denoms))
 
       // get address / publickey
@@ -222,7 +222,7 @@ describe('Json', function () {
       await sim.start({ ...DEFAULT_OPTIONS, model: m.name })
       const app = new CosmosApp(sim.getTransport())
 
-      const path = [44, 118, 0, 0, 0]
+      const path = [44, 750, 0, 0, 0]
       const tx = Buffer.from(JSON.stringify(setWithdrawAddress))
 
       // get address / publickey
@@ -267,7 +267,7 @@ describe('Json', function () {
       await sim.start({ ...DEFAULT_OPTIONS, model: m.name })
       const app = new CosmosApp(sim.getTransport())
 
-      const path = [44, 118, 0, 0, 0]
+      const path = [44, 750, 0, 0, 0]
       const tx = Buffer.from(JSON.stringify(cliGovDeposit))
 
       // get address / publickey

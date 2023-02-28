@@ -43,7 +43,7 @@
        await sim.start({ ...DEFAULT_OPTIONS, model: m.name })
        const app = new CosmosApp(sim.getTransport())
  
-       const path = [44, 118, 0, 0, 0]
+       const path = [44, 750, 0, 0, 0]
        const tx = Buffer.from(tx_sign_textual, 'hex')
  
        // get address / publickey
@@ -94,7 +94,7 @@
       await sim.clickBoth()
       await sim.clickLeft()
 
-      const path = [44, 118, 0, 0, 0]
+      const path = [44, 750, 0, 0, 0]
       const tx = Buffer.from(tx_sign_textual, 'hex')
 
       // get address / publickey
