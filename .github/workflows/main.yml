@@ -140,7 +140,12 @@ jobs:
         with:
           submodules: true
       - name: Install deps
-        run: pip install ledgerblue
+        # With setuptools 66, the versions of all packages visible in the Python environment must obey PEP440
+        # And there are some packages that don't conform to PEP440 so using setuptools@65.x for now
+        # BUG: https://bugs.launchpad.net/ubuntu/+source/distro-info/+bug/2003583
+        run: |
+          pip install --upgrade --user setuptools~=65.7.0
+          pip install ledgerblue
 
       - name: Build NanoS
         shell: bash -l {0}
@@ -151,9 +156,7 @@ jobs:
 
       - name: Set tag
         id: nanos
-        run: |
-          pip install ledgerblue
-          echo ::set-output name=tag_name::$(./app/pkg/installer_nanos.sh version)
+        run: echo ::set-output name=tag_name::$(./app/pkg/installer_nanos.sh version)
       - name: Create Release
         id: create_release
         uses: softprops/action-gh-release@v1
@@ -182,7 +185,12 @@ jobs:
         with:
           submodules: true
       - name: Install deps
-        run: pip install ledgerblue
+        # With setuptools 66, the versions of all packages visible in the Python environment must obey PEP440
+        # And there are some packages that don't conform to PEP440 so using setuptools@65.x for now
+        # BUG: https://bugs.launchpad.net/ubuntu/+source/distro-info/+bug/2003583
+        run: |
+          pip install --upgrade --user setuptools~=65.7.0
+          pip install ledgerblue
 
       - name: Build NanoSP
         shell: bash -l {0}
@@ -193,9 +201,7 @@ jobs:
 
       - name: Set tag
         id: nanosp
-        run: |
-          pip install ledgerblue
-          echo ::set-output name=tag_name::$(./app/pkg/installer_nanos_plus.sh version)
+        run: echo ::set-output name=tag_name::$(./app/pkg/installer_nanos_plus.sh version)
       - name: Update Release
         id: update_release
         uses: softprops/action-gh-release@v1
